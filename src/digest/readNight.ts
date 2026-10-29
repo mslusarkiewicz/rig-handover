@@ -5,7 +5,7 @@ import type { DigestRow, ReadNight, RunRecord } from './types.js';
 const STATUSES = new Set(['ok', 'retry', 'fail']);
 
 // A line is a record only if it parses and has the right shape; anything else is a bad line.
-function parseLine(line: string): RunRecord | null {
+export function parseLine(line: string): RunRecord | null {
   let v: unknown;
   try {
     v = JSON.parse(line);
